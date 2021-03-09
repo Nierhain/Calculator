@@ -63,7 +63,7 @@ function isSingleOperation(ops){
 }
 
 function isSameOperationType(operators){
-    return operators.every(el => el == (ADD_OPERATOR || SUBTRACT_OPERATOR) || (MULTIPLY_OPERATOR || DIVIDE_OPERATOR))
+    return operators.every(el => el == ADD_OPERATOR || el == SUBTRACT_OPERATOR ) || operators.every(el => el == MULTIPLY_OPERATOR || el == DIVIDE_OPERATOR)
 }
 
 /*
