@@ -7,16 +7,17 @@
     <title>Calculator</title>
 </head>
 <body>
-    <p>Result:</p><p id="result"></p>
+    <h4>Result: <span id="result"></span></h4>
     <button onclick="debugSingle(0)">Calculate testCase[0]</button>
     <button onclick="debugSingle(1)">Calculate testCase[1]</button>
     <button onclick="debugSingle(2)">Calculate testCase[2]</button>
     <button onclick="debugAll()">Calculate All</button>
 
-    <div>
+    <div style="margin-top: 50px">
+        <h4>Custom Input</h4>
         <input type="text" id="inputfield">
         <button onclick="userInput()">Calculate</button>
-        <p id="inputResult"></p>
+        <h4>Result: <span id="inputResult"></span></h4>
     </div>
     <script src="Calculator.js"></script>
 </body>
