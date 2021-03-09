@@ -17,7 +17,7 @@ function calculate(calcString){
     operators = extractOperators(calcString)
 
     if(isSingleOperation(operators) || isSameOperationType(operators)){
-        result = chainCalculation(numbers, operators[0])
+        result = chainCalculation(numbers, operators)
     } else {
         result = arithmeticCalculation(numbers, operators)
     }
@@ -72,18 +72,19 @@ function isSameOperationType(operators){
  * 
 */
 
-function chainCalculation(numbers, operation){
+function chainCalculation(numbers, operators){
     let result = 0
     do {
-        result += calculationStep(operation, numbers[0], numbers[1])
+        result = calculationStep(operators[0], numbers[0], numbers[1])
         numbers.splice(0,2)
         numbers.unshift(result)
-    } while( numbers.length > 1)
+        operators.shift()
+    } while(numbers.length > 1)
     return result
 }
 
 function arithmeticCalculation(numbers, operators) {
-    
+
 }
 
 function calculationStep(operator, leftNumber, rightNumber) {
